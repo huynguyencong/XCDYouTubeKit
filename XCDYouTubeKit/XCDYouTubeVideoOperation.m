@@ -484,7 +484,9 @@ static NSError *YouTubeError(NSError *error, NSSet *regionsAllowed, NSString *la
 	
 	self.isExecuting = YES;
 	
-	self.eventLabels = [[NSMutableArray alloc] initWithArray:@[ @"embedded", @"detailpage" ]];
+	// self.eventLabels = [[NSMutableArray alloc] initWithArray:@[ @"embedded", @"detailpage" ]];
+	// workaround: disable getting by get_video_info API
+	self.eventLabels = [[NSMutableArray alloc] init];
 	[self startNextRequest];
 }
 
